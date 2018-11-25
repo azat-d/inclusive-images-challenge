@@ -1,0 +1,48 @@
+DATASET:
+  ORIGINAL_IMAGES_ROOT: "/original_images"
+  RESIZED_IMAGES_ROOT: "/resized_images"
+  SHORTEST_SIZE: 256
+  HUMAN_LABELS_PATH: "/inclusive/train_human_labels.csv"
+  TRAIN_LIST_PATH: "/artifacts/train.txt"
+  VAL_LIST_PATH: "/artifacts/val.txt"
+  VAL_RATIO: 0.01
+  TUNING_LABELS_PATH: "/inclusive/tuning_labels.csv"
+  TUNING_LIST_PATH: "/artifacts/tuning.txt"
+  TUNING_TRAIN_RATIO: 0.99
+  NAME_TO_LABEL_PATH: "/artifacts/name_to_label.pkl"
+  STAGE1_TEST_IMAGES_ROOT: "/inclusive/stage_1_test_images"
+  STAGE1_SAMPLE_SUBMISSION_PATH: "/inclusive/stage_1_sample_submission.csv"
+  STAGE2_TEST_IMAGES_ROOT: "/inclusive/stage_2_test_images"
+  STAGE2_SAMPLE_SUBMISSION_PATH: "/inclusive/stage_2_sample_submission.csv"
+TRAINING:
+  SEED: 0xDEADFACE
+  ARTIFACTS_ROOT: "/artifacts/training"
+  BATCH_SIZE: 32
+  INITIAL_LR: 0.01
+  LR_DECAY: 0.1
+  LR_STEP: 10
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0001
+  N_EPOCH: 25
+  LOG_FREQUENCY: 100
+VALIDATION:
+  TOP_K: 150
+TUNING:
+  SEED: 0xDEADFACE
+  ARTIFACTS_ROOT: "/artifacts/tuning"
+  BATCH_SIZE: 32
+  INITIAL_LR: 0.0001
+  LR_DECAY: 0.1
+  LR_STEP: 100
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0001
+  N_EPOCH: 80
+  LOG_FREQUENCY: 30
+SUBMISSION:
+  OUTPUT_ROOT: "/output"
+  BATCH_SIZE: 32
+  TOP_K: 150
+  MIN_PREDS: 2
+  MAX_PREDS: 5
+  THRESHOLD: 0.55
+
